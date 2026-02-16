@@ -1,24 +1,40 @@
-# ReconHunter-Pro
+# ReconHunter-Pro 🔍
 
-Advanced Reconnaissance & OSINT Framework for automated subdomain discovery, passive reconnaissance, DNS enumeration, WAF/CDN detection, vulnerability scanning, and continuous monitoring.
+**Advanced Reconnaissance & OSIN Framework**
 
-Built with asynchronous Python for speed and scalability.
+A powerful, completely **free** reconnaissance and OSINT tool designed for authorized security testing, bug bounty hunting, and penetration testing.  
+Built with asynchronous Python for maximum speed and scalability.  
+**No API keys required for core functionality** — optional keys can be added for enhanced results.
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
+![License](https://img.shields.io/badge/License-Apache_2.0-green?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/Arash-Mansourpour/ReconHunter-Pro?style=social)
 
 ---
 
-## Features
+## Key Features
 
-- Automated subdomain discovery
-- Passive reconnaissance from multiple OSINT sources
-- DNS enumeration and bruteforce
-- WAF and CDN detection
-- Technology fingerprinting
-- Port scanning
-- JavaScript secrets detection
-- SSL analysis
-- Continuous monitoring (Watch Tower mode)
-- Interactive HTML dashboard
-- Export results (JSON, CSV, TXT, MD)
+- 🌐 **Automated Subdomain Enumeration**
+- 🔍 **Passive Information Gathering** from multiple OSINT sources
+- 🧬 **DNS Lookup & Brute-Forcing**
+- 🔥 **WAF and CDN Detection**
+- 🛠 **Technology Fingerprinting**
+- 🚪 **Port Scanning**
+- 🔒 **JavaScript Secrets Discovery**
+- 📜 **SSL Certificate Analysis**
+- ⏰ **Continuous Monitoring** (WatchTower Mode)
+- 📊 **Interactive HTML Dashboard** with live results view
+- 📤 **Multiple Output Formats**: JSON, CSV, TXT, Markdown
+
+---
+
+## Scan Levels
+
+| Level       | Description                                  | Best For                          |
+|-------------|----------------------------------------------|-----------------------------------|
+| **Passive** | Only OSINT sources (completely passive)      | Stealthy and fast scans           |
+| **Normal**  | Passive + DNS lookups                        | Standard reconnaissance           |
+| **Aggressive** | Everything: ports, WAF, JS analysis, etc. | Deep and comprehensive scans      |
 
 ---
 
@@ -27,50 +43,57 @@ Built with asynchronous Python for speed and scalability.
 ```bash
 git clone https://github.com/Arash-Mansourpour/ReconHunter-Pro.git
 cd ReconHunter-Pro
-pip install -r requirements.txt
+pip install -r requirements.txt   # Dependencies are auto-installed if requirements.txt is missing
 ```
+
+**Requirements:**
+- Python 3.10 or higher
+- Internet access for OSINT sources
 
 ---
 
 ## Usage
 
-### GUI Mode
-
+### Graphical Interface (GUI)
 ```bash
 python main.py
 ```
+The GUI will launch — simply enter your target domain.
 
-### CLI Mode
+### Command Line Interface (CLI)
 
-Basic scan:
+**Standard Scan (Normal):**
 ```bash
 python main.py example.com
 ```
 
-Passive scan:
+**Passive Scan:**
 ```bash
 python main.py example.com -l passive
 ```
 
-Aggressive scan:
+**Aggressive Scan with Dashboard:**
 ```bash
 python main.py example.com -l aggressive --dashboard
 ```
 
-Continuous monitoring:
+**Continuous Monitoring (every 6 hours):**
 ```bash
 python watchtower_cli.py example.com --interval 6
 ```
 
 ---
 
-## Scan Levels
+## Configuration (Optional)
 
-| Level | Description |
-|------|-------------|
-| Passive | OSINT sources only |
-| Normal | Passive + DNS enumeration |
-| Aggressive | Full scanning including ports, WAF detection, JS analysis |
+For better results, add API keys to `config.py`:
+
+```python
+SHODAN_API_KEY = "your_key"
+CENSYS_API_ID = "your_id"
+SECURITYTRAILS_API_KEY = "your_key"
+VIRUSTOTAL_API_KEY = "your_key"
+```
 
 ---
 
@@ -78,71 +101,55 @@ python watchtower_cli.py example.com --interval 6
 
 ```
 ReconHunter-Pro/
-├── main.py
-├── config.py
-├── watchtower_cli.py
-├── core/
-├── detection/
-├── analysis/
-├── scanner/
-├── output/
-├── gui/
-├── monitoring/
-└── utils/
+├── main.py              # Main entry point & GUI
+├── config.py            # Configuration
+├── watchtower_cli.py    # Continuous monitoring
+├── core/                # Core engine
+├── detection/           # WAF/CDN and tech detection
+├── analysis/            # Result analysis
+├── scanner/             # Scanning modules
+├── output/              # Outputs and dashboard
+├── gui/                 # Graphical interface
+├── monitoring/          # Monitoring tools
+└── utils/               # Helper utilities
 ```
 
 ---
 
-## Configuration
+## ⚠️ Security Warning
 
-Optional API keys can improve results:
+**This tool is intended solely for authorized security testing.**
 
-```
-SHODAN_API_KEY=""
-CENSYS_API_ID=""
-SECURITYTRAILS_API_KEY=""
-VIRUSTOTAL_API_KEY=""
-```
+- Always obtain permission before scanning.
+- Comply with local and international laws.
+- Practice responsible disclosure.
 
----
-
-## Security Notice
-
-This tool is intended for **authorized security testing only**.
-
-Always:
-- Obtain permission before scanning
-- Follow responsible disclosure
-- Respect local laws
+Misuse may have legal consequences.
 
 ---
 
 ## Contributing
 
-Pull requests are welcome.
+Want to help improve the tool?  
+1. Fork the repository  
+2. Create a new branch  
+3. Commit your changes  
+4. Push and open a Pull Request  
 
-Steps:
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push branch
-5. Open a Pull Request
+All contributions are welcome! 🎉
 
 ---
 
 ## License
 
-Apache License 2.0
-
-Copyright (c) 2026 Arash Mansourpour
+[Apache License 2.0](LICENSE)  
+Copyright © 2026 Arash Mansourpour
 
 ---
 
 ## Author
 
-Arash Mansourpour  
-GitHub: https://github.com/Arash-Mansourpour
+**Arash Mansourpour**  
+GitHub: [@Arash-Mansourpour](https://github.com/Arash-Mansourpour)
 
----
-
-⭐ If you find this project useful, consider starring the repository.
+If you find this tool useful, please give it a ⭐ star! 🙏
