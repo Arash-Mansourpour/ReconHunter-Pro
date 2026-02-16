@@ -1,98 +1,118 @@
-# ReconHunter-Pro 🔍
+# Recon Hunter Pro - Ultimate Edition v5.0
 
-**Advanced Reconnaissance & OSIN Framework**
+**AI-Powered Reconnaissance & OSINT Framework**
 
-A powerful, completely **free** reconnaissance and OSINT tool designed for authorized security testing, bug bounty hunting, and penetration testing.  
-Built with asynchronous Python for maximum speed and scalability.  
-**No API keys required for core functionality** — optional keys can be added for enhanced results.
+A completely **free**, open-source, advanced reconnaissance tool designed for authorized security testing, bug bounty hunting, penetration testing, and continuous asset monitoring.
+
+Built with **asynchronous Python** for maximum performance and scalability.  
+**No API keys required** for core functionality — optional keys unlock enhanced results.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![License](https://img.shields.io/badge/License-Apache_2.0-green?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/Arash-Mansourpour/ReconHunter-Pro?style=social)
+![Version](https://img.shields.io/badge/Version-v5.0-orange?style=for-the-badge)
 
 ---
 
-## Key Features
+## Key Features (v5.0 New & Enhanced)
 
-- 🌐 **Automated Subdomain Enumeration**
-- 🔍 **Passive Information Gathering** from multiple OSINT sources
-- 🧬 **DNS Lookup & Brute-Forcing**
-- 🔥 **WAF and CDN Detection**
-- 🛠 **Technology Fingerprinting**
-- 🚪 **Port Scanning**
-- 🔒 **JavaScript Secrets Discovery**
-- 📜 **SSL Certificate Analysis**
-- ⏰ **Continuous Monitoring** (WatchTower Mode)
-- 📊 **Interactive HTML Dashboard** with live results view
-- 📤 **Multiple Output Formats**: JSON, CSV, TXT, Markdown
+- 🤖 **AI-Powered Subdomain Prediction** (OpenAI/GPT integration)
+- 🗼 **Continuous Monitoring & Change Detection** (WatchTower mode)
+- ⚔️ **Nuclei Integration** for automated vulnerability scanning
+- 🌑 **Dark Web & Paste Site Monitoring**
+- 📊 **Interactive Web-based Dashboard**
+- 🔔 **Webhook Notifications** (Slack, Discord, Telegram, Email, Custom)
+- 🌐 **30+ Passive OSINT Sources** (crt.sh, ThreatCrowd, HackerTarget, etc.)
+- 🔍 **Advanced DNS Enumeration** (bruteforce, permutations, takeover detection)
+- 🛡️ **WAF, CDN, Technology & Cloud Detection**
+- 🚪 **Port Scanning & Service Fingerprinting**
+- 🔒 **JavaScript Secrets & API Endpoint Discovery**
+- ☁️ **Cloud Storage Bucket Enumeration** (AWS S3, Azure, GCS)
+- 📧 **Email Pattern & Social Media OSINT**
+- 📜 **SSL/TLS & Historical Certificate Analysis**
+- 🗃️ **SQLite/PostgreSQL Database Backend** for history & change tracking
+- 📤 **Multiple Export Formats** (JSON, CSV, HTML, Markdown)
 
 ---
 
 ## Scan Levels
 
-| Level       | Description                                  | Best For                          |
-|-------------|----------------------------------------------|-----------------------------------|
-| **Passive** | Only OSINT sources (completely passive)      | Stealthy and fast scans           |
-| **Normal**  | Passive + DNS lookups                        | Standard reconnaissance           |
-| **Aggressive** | Everything: ports, WAF, JS analysis, etc. | Deep and comprehensive scans      |
+| Level      | Description                                      | Best For                              |
+|------------|--------------------------------------------------|---------------------------------------|
+| **Passive**    | Only public OSINT sources (completely stealth)   | Fast, undetectable reconnaissance     |
+| **Normal**     | Passive + DNS bruteforce                         | Standard subdomain discovery          |
+| **Aggressive** | Normal + port scanning, WAF/CDN/tech detection   | Deep infrastructure mapping           |
+| **Ultimate**   | All features + AI prediction, Nuclei, JS analysis| Maximum coverage & vulnerability hunt |
 
 ---
 
 ## Installation
 
 ```bash
-git clone https://github.com/Arash-Mansourpour/ReconHunter-Pro.git
+git clone https://github.com/your-repo/ReconHunter-Pro.git   # or use your local copy
 cd ReconHunter-Pro
-pip install -r requirements.txt   # Dependencies are auto-installed if requirements.txt is missing
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 **Requirements:**
-- Python 3.10 or higher
+- Python 3.10+
 - Internet access for OSINT sources
+- (Optional) API keys for enhanced results
 
 ---
 
 ## Usage
 
-### Graphical Interface (GUI)
-```bash
-python main.py
-```
-The GUI will launch — simply enter your target domain.
+### Graphical Interface (GUI) - Recommended
 
-### Command Line Interface (CLI)
-
-**Standard Scan (Normal):**
 ```bash
-python main.py example.com
+python ReconHunterProLA_Ultimate.py
 ```
 
-**Passive Scan:**
+- Modern dark-themed GUI
+- Real-time progress and results
+- Built-in configuration for API keys & notifications
+
+### WatchTower CLI - Continuous Monitoring
+
 ```bash
-python main.py example.com -l passive
+# Continuous monitoring (default: every 6 hours)
+python watchtower_cli.py example.com
+
+# Custom interval (1 hour)
+python watchtower_cli.py example.com --interval 1
+
+# Single scan only
+python watchtower_cli.py example.com --single-scan
+
+# With notifications
+python watchtower_cli.py example.com --slack-webhook https://hooks.slack.com/...
 ```
 
-**Aggressive Scan with Dashboard:**
-```bash
-python main.py example.com -l aggressive --dashboard
-```
+### Older CLI/GUI Versions (Legacy)
 
-**Continuous Monitoring (every 6 hours):**
-```bash
-python watchtower_cli.py example.com --interval 6
-```
+- `ReconHunterProLA_Enhanced.py` → v4.0 features
+- `ReconHunterProLA.py` → v3.0 base version
+- `main.py` → Enterprise v4.0 CLI entry
 
 ---
 
-## Configuration (Optional)
+## Configuration (Optional but Recommended)
 
-For better results, add API keys to `config.py`:
+Edit `config.py` or use GUI → Settings:
 
 ```python
-SHODAN_API_KEY = "your_key"
-CENSYS_API_ID = "your_id"
-SECURITYTRAILS_API_KEY = "your_key"
-VIRUSTOTAL_API_KEY = "your_key"
+# Example API keys
+OPENAI_API_KEY = "sk-..."
+SHODAN_API_KEY = "your_shodan_key"
+VIRUSTOTAL_API_KEY = "your_vt_key"
+
+# Notifications
+SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/..."
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."
+TELEGRAM_BOT_TOKEN = "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"
+TELEGRAM_CHAT_ID = "-1001234567890"
 ```
 
 ---
@@ -100,50 +120,63 @@ VIRUSTOTAL_API_KEY = "your_key"
 ## Project Structure
 
 ```
-ReconHunter-Pro/
-├── main.py              # Main entry point & GUI
-├── config.py            # Configuration
-├── watchtower_cli.py    # Continuous monitoring
-├── core/                # Core engine
-├── detection/           # WAF/CDN and tech detection
-├── analysis/            # Result analysis
-├── scanner/             # Scanning modules
-├── output/              # Outputs and dashboard
-├── gui/                 # Graphical interface
-├── monitoring/          # Monitoring tools
-└── utils/               # Helper utilities
+recon_app/
+├── ReconHunterProLA_Ultimate.py     # Main GUI (v5.0)
+├── ReconHunterProLA_Enhanced.py     # Enhanced GUI (v4.0)
+├── watchtower_cli.py                # Continuous monitoring CLI
+├── config.py                        # All configuration settings
+├── main.py                          # Legacy CLI entry
+├── requirements.txt                 # Dependencies
+├── README.md                        # This file
+
+├── core/          # Core scanning engine
+├── detection/     # WAF, CDN, tech detection
+├── analysis/      # JS, secrets, vulnerability analysis
+├── scanner/       # Main reconnaissance scanner
+├── monitoring/    # WatchTower & change detection
+├── gui/           # GUI components
+├── output/        # Reports & dashboard
+└── utils/         # Helpers & utilities
 ```
 
 ---
 
-## ⚠️ Security Warning
+## Known Issues & Notes
 
-**This tool is intended solely for authorized security testing.**
+- Some advanced features (Nuclei, Dark Web monitoring) may show as placeholders in current builds
+- On Windows, certain DNS tools (aiodns) may require SelectorEventLoop (handled automatically)
+- For best results, configure API keys in Settings
+- WatchTower logs are saved to `watchtower.log`
 
-- Always obtain permission before scanning.
-- Comply with local and international laws.
-- Practice responsible disclosure.
+---
 
-Misuse may have legal consequences.
+## ⚠️ Legal & Ethical Warning
+
+**This tool is for authorized security testing only.**
+
+- Always obtain explicit permission before scanning any target
+- Comply with all applicable laws and regulations
+- Practice responsible disclosure
+- Misuse may have serious legal consequences
 
 ---
 
 ## Contributing
 
-Want to help improve the tool?  
+Contributions are welcome!  
 1. Fork the repository  
-2. Create a new branch  
+2. Create a feature branch  
 3. Commit your changes  
-4. Push and open a Pull Request  
+4. Open a Pull Request
 
-All contributions are welcome! 🎉
+Bug reports, feature requests, and improvements are highly appreciated.
 
 ---
 
 ## License
 
-[Apache License 2.0](LICENSE)  
-Copyright © 2026 Arash Mansourpour
+Apache License 2.0  
+Copyright © 2026 Arash Mansourpour (and contributors)
 
 ---
 
@@ -152,4 +185,8 @@ Copyright © 2026 Arash Mansourpour
 **Arash Mansourpour**  
 GitHub: [@Arash-Mansourpour](https://github.com/Arash-Mansourpour)
 
-If you find this tool useful, please give it a ⭐ star! 🙏
+If this tool helps you, please give it a ⭐ star! Your support keeps development going! 🙏
+
+---
+
+**Recon Hunter Pro** — Hunt smarter, not harder. 🚀
